@@ -19,12 +19,27 @@ const lightboxImage = document.querySelector('[data-lightbox-img]');
 const lightboxCaption = document.querySelector('[data-lightbox-caption]');
 const lightboxClose = document.querySelector('[data-lightbox-close]');
 
+function isSafeMediaSrc(src) {
+    if (!src) {
+        return false;
+    }
+    try {
+        const url = new URL(src, window.location.origin);
+        return url.protocol === 'http:' || url.protocol === 'https:';
+    } catch (e) {
+        return false;
+    }
+}
+
 if (lightboxBackdrop && lightboxImage && lightboxCaption) {
     document.addEventListener('click', (e) => {
         const trigger = e.target.closest('[data-media-trigger]');
         if (trigger) {
             const largeSrc = trigger.getAttribute('data-media-src');
             const description = trigger.getAttribute('data-media-description') || '';
+            if (!isSafeMediaSrc(largeSrc)) {
+                return;
+            }
             lightboxImage.src = largeSrc;
             lightboxImage.alt = description;
             lightboxCaption.textContent = description;
