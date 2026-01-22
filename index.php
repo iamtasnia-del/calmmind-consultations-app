@@ -1,0 +1,150 @@
+<?php require_once __DIR__ . '/includes/content.php'; ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CalmMind Consultation – Mental Health Consultation Platform</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="CalmMind Consultation is an online mental health consultation platform connecting clients with qualified professionals in a safe, confidential space.">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<a href="#main" class="skip-link">Skip to main content</a>
+
+<header class="site-header">
+    <div class="site-header-inner">
+        <div class="brand">
+            <img src="images/logo.png" alt="CalmMind Consultation logo" class="brand-logo-img">
+            <div class="brand-text">
+                <h1>CalmMind Consultation</h1>
+                <p>Mental Health Consultation Platform</p>
+            </div>
+        </div>
+
+        <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false" data-nav-toggle>☰</button>
+
+        <nav class="main-nav" aria-label="Main navigation" data-main-nav>
+            <a href="index.php" aria-current="page">Home</a>
+            <a href="about.php">About</a>
+            <a href="services.php">Services</a>
+            <a href="resources.html">Resources</a>
+            <a href="contact.php">Contact</a>
+            <a href="login.php">Login</a>
+            <a href="register.php" class="nav-cta">Register</a>
+        </nav>
+    </div>
+</header>
+
+<main id="main">
+    <div class="wrapper">
+
+        <section class="hero" aria-labelledby="hero-heading">
+            <div class="hero-text card">
+                <div class="badge-row">
+                    <span class="badge">Confidential &amp; secure</span>
+                    <span class="badge">Registered professionals</span>
+                    <span class="badge">Online &amp; in-person</span>
+                </div>
+
+                <h2 id="hero-heading"><?php renderContent('home', 'hero_title', 'Accessible mental health support, from wherever you are.'); ?></h2>
+                <p class="lead">
+                    <?php renderContent('home', 'hero_text', 'CalmMind Consultation connects you with licensed psychologists and counsellors for evidence-based support tailored to your needs, wherever you are on your mental health journey.'); ?>
+                </p>
+
+                <div class="hero-actions">
+                    <a href="contact.php" class="btn btn-primary">
+                        Start a consultation
+                    </a>
+                    <a href="services.php" class="btn btn-outline">
+                        Explore services
+                    </a>
+                </div>
+
+                <div class="hero-stats" aria-label="CalmMind highlights">
+                    <div class="hero-stat">
+                        <span class="number">24/7</span>
+                        <span>Booking requests</span>
+                    </div>
+                    <div class="hero-stat">
+                        <span class="number">30+</span>
+                        <span>Qualified professionals</span>
+                    </div>
+                    <div class="hero-stat">
+                        <span class="number">100%</span>
+                        <span>Confidential sessions</span>
+                    </div>
+                </div>
+            </div>
+
+            <aside class="hero-media">
+                <div class="hero-panel">
+                    <?php renderImage('home', 'hero_text', 'images/hero-therapy.png', 'A client speaking with a therapist during an online video session.'); ?>
+                    <small>Illustration of a typical CalmMind online consultation.</small>
+                </div>
+            </aside>
+        </section>
+
+        <section aria-labelledby="why-heading">
+            <div class="section-heading">
+                <h2 id="why-heading">Why choose CalmMind?</h2>
+                <p>
+                    <?php renderContent('home', 'why_choose_intro', 'Our platform is built around safety, accessibility and professional care, making it easier to ask for help and receive support.'); ?>
+                </p>
+            </div>
+
+            <div class="feature-grid">
+                <article class="card feature-card">
+                    <h3><?php renderContent('home', 'feature_matching_title', 'Personalised matching'); ?></h3>
+                    <p>
+                        <?php renderContent('home', 'feature_matching_text', 'Complete a short, confidential questionnaire and we match you with professionals whose expertise aligns with your goals, preferences and availability.'); ?>
+                    </p>
+                </article>
+
+                <article class="card feature-card">
+                    <h3><?php renderContent('home', 'feature_modes_title', 'Flexible consultation modes'); ?></h3>
+                    <p>
+                        <?php renderContent('home', 'feature_modes_text', 'Select online video, audio-only or in-person sessions. You can switch modes as your comfort levels and schedule change.'); ?>
+                    </p>
+                </article>
+
+                <article class="card feature-card">
+                    <h3><?php renderContent('home', 'feature_evidence_title', 'Evidence-informed care'); ?></h3>
+                    <p>
+                        <?php renderContent('home', 'feature_evidence_text', 'CalmMind practitioners draw on cognitive-behavioural, solution-focused and trauma-informed approaches, adapting them to your context.'); ?>
+                    </p>
+                </article>
+            </div>
+        </section>
+
+    </div>
+</main>
+
+<footer class="site-footer">
+    <div class="footer-inner">
+        <div class="footer-col">
+            <h3>CalmMind Consultation</h3>
+            <p>Supporting mental wellbeing through accessible, ethical and person-centred consultations.</p>
+        </div>
+        <div class="footer-col">
+            <h3>Quick links</h3>
+            <ul class="footer-links">
+                <li><a href="index.php">Home</a></li>
+                <li><a href="about.php">About the platform</a></li>
+                <li><a href="services.php">Consultation services</a></li>
+                <li><a href="resources.html">Self-help resources</a></li>
+                <li><a href="contact.php">Book a consultation</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h3>Need immediate help?</h3>
+            <p class="muted">
+                CalmMind is not a crisis service. If you or someone you know is in immediate danger, please contact
+                local emergency services or a crisis helpline in your area.
+            </p>
+        </div>
+    </div>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>
