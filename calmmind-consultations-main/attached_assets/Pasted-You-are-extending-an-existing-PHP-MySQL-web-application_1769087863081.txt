@@ -1,0 +1,155 @@
+You are extending an existing PHP + MySQL web application called CalmMind Consultations.
+The application already includes:
+
+Session-based authentication
+
+Role-based access control (admin and client)
+
+A working admin dashboard
+
+An existing frontend layout that must NOT be changed
+
+Do NOT redesign the UI.
+Do NOT add new pages dynamically.
+Do NOT implement a full CMS.
+Implement ONLY the features described below.
+
+Objective
+
+Add a simple admin-only content management system that allows administrators to update predefined text content and images for existing website pages.
+
+1. Database Requirements
+
+Create a table called site_content with the following fields:
+
+id (primary key)
+
+page_name (e.g. home, about, services, contact, privacy)
+
+section_name (e.g. intro, mission, banner)
+
+content (TEXT)
+
+image_path (VARCHAR, nullable)
+
+updated_at (timestamp)
+
+Do NOT add additional tables.
+
+2. Editable Pages (Fixed Scope)
+
+Admins may edit content for ONLY these pages:
+
+Home
+
+About
+
+Services
+
+Contact
+
+Privacy Policy
+
+Admins may NOT:
+
+Create new pages
+
+Delete pages or sections
+
+Change layout or structure
+
+3. Admin Interface
+
+Create an admin-only page:
+
+admin/manage_content.php
+
+Features:
+
+Dropdown to select page
+
+Dropdown to select section
+
+Textarea to edit text content
+
+File input to optionally upload a replacement image
+
+Save button
+
+Behaviour:
+
+Load existing content from database into form
+
+If no image is uploaded, keep existing image
+
+If an image is uploaded, replace image_path
+
+4. Image Upload Rules
+
+Admin-only access
+
+Allowed file types: jpg, jpeg, png
+
+Maximum size: 2MB
+
+Validate images using getimagesize()
+
+Store images in /uploads/ subfolders by page name
+
+Generate unique filenames
+
+Do NOT delete old images
+
+Do NOT allow multiple image uploads per section
+
+5. Frontend Content Loading
+
+Modify existing pages to:
+
+Keep all HTML layout unchanged
+
+Load text and image paths from site_content
+
+Display images only if image_path exists
+
+Escape output using htmlspecialchars()
+
+6. Security Rules
+
+Only users with role admin may access CMS pages
+
+Use existing session checks
+
+Use prepared statements for all database queries
+
+Validate all inputs server-side
+
+7. Constraints
+
+Use plain PHP (no frameworks)
+
+Use existing database connection
+
+No JavaScript frameworks
+
+No drag-and-drop editors
+
+No WYSIWYG editors
+
+No content versioning
+
+No permissions beyond admin/client
+
+Output Requirements
+
+Provide:
+
+SQL required to create the site_content table
+
+PHP files required for admin CMS
+
+Minimal HTML integrated into existing layout
+
+Clear inline comments only where necessary
+
+Do not include explanations unless required for clarity.
