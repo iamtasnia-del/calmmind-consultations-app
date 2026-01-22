@@ -346,4 +346,6 @@ This project was created for educational purposes as part of ICT726 Assignment 4
 
 ## Contributors
 
-- [Add team member names here]
+- Yadav Sarkar
+- Tasnia Tehsin
+
